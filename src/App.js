@@ -9,6 +9,8 @@ import { DeleteProduct } from './Components/Product/DeleteProduct';
 import {ProductDetails} from './Components/Product/ProductDetails';
 import { Login } from './Components/Auth/Login';
 import  RegisterForm  from './Components/Auth/RegisterForm';
+import LoginForm from './Components/Product/Login';
+import Navbar from './Components/Navbar';
 
 
 function App() {
@@ -21,14 +23,16 @@ function App() {
   return (
     <div className="App">
       <ProductContext.Provider value={products}></ProductContext.Provider>
-      <AddProduct/>
-    
+        {/* <AddProduct/>
+     */}
+       <Navbar/>
       <Router>
       <Routes>
         {/* Add a route that includes the productId parameter */}
         {/*<Route path="/edit-product/:productId" component={EditProduct} />*/}
         {/*<Route path="/edit-product/:productId" element={<EditProduct/>}></Route>*/}
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<LoginForm />} />
+        
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/productlist" element={<ProductList/>}></Route>
         <Route path="/edit-product/:productId" element={<DeleteProduct/>}></Route>
